@@ -1,37 +1,36 @@
 {
     "log": { "level": "info" },
-  
     "inbounds": [
-      {
-        "type": "tuic",
-        "tag": "tuic-in",
-        "listen": "::",
-        "listen_port": 443,
-        "congestion_control": "bbr",
-        "users": [
-          {
-            "uuid": "7f7509a8-c14e-4c07-b719-aa6b9b13c593",
-            "password": "8e1a244144da8ced"
-          }
-        ],
-        "tls": {
-          "enabled": true,
-          "certificate_path": "/etc/sing-box/cert.pem",
-          "key_path": "/etc/sing-box/key.pem",
-          "alpn": ["h3"]
+        {
+            "type": "tuic",
+            "tag": "tuic-in",
+            "listen": "::",
+            "listen_port": 443,
+            "congestion_control": "bbr",
+            "users": [
+            {
+                "uuid": "7f7509a8-c14e-4c07-b719-aa6b9b13c593",
+                "password": "8e1a244144da8ced"
+            }
+            ],
+            "tls": {
+            "enabled": true,
+            "certificate_path": "/etc/sing-box/cert.pem",
+            "key_path": "/etc/sing-box/key.pem",
+            "alpn": ["h3"]
+            }
+        },
+        {
+            "type": "mixed",
+            "tag": "socks-in",
+            "listen": "0.0.0.0",
+            "listen_port": 3032,
+            "users": [
+            {
+                "username": "root",
+                "password": "Rxx99NeeNq"
+            }
+            ]
         }
-      },
-      {
-        "type": "mixed",
-        "tag": "socks-in",
-        "listen": "0.0.0.0",
-        "listen_port": 3032,
-        "users": [
-          {
-            "username": "root",
-            "password": "Rxx99NeeNq"
-          }
-        ]
-      }
     ]
-  }
+}
