@@ -1,0 +1,22 @@
+{
+    "log": { "loglevel": "debug" },
+    "inbounds": [
+        {
+            "port": 3033,
+            "listen": "0.0.0.0",
+            "protocol": "socks",
+            "settings": {
+            "auth": "password",
+            "accounts": [
+                { "user": "root", "pass": "Rxx99NeeNq" }
+            ],
+            "udp": true,
+            "ip": "0.0.0.0"
+            }
+        }
+        ],
+        "outbounds": [ { "protocol": "freedom" } ],
+        "dns": {
+        "servers": [ "https://1.1.1.1/dns-query" ]
+    }
+}
